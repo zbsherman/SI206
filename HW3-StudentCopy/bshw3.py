@@ -10,3 +10,15 @@
 
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
+import requests
+from bs4 import BeautifulSoup
+
+
+base_url = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
+r = requests.get(base_url)
+soup = BeautifulSoup(r.text, "lxml")
+
+for tag in soup.find_all(class_ = "field field-name-body field-type-text-with-summary field-label-hidden"):
+	for thing in tag(class_ = 'field-item even'):
+		if "img" in thing:
+			print(thing)
