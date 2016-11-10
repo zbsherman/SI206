@@ -6,7 +6,6 @@
 # 3) Print the average polarity of the results
 # You will demo this live for grading.
 import tweepy
-import nltk
 from textblob import TextBlob
 
 # Unique code from Twitter
