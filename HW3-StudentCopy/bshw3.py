@@ -14,7 +14,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import re
-import HW3-StudentCopy.media.logo.png
+#import HW3-StudentCopy.media.logo.png
 
 
 
@@ -31,17 +31,20 @@ for tag in soup.find_all(class_ = "html not-front logged-in two-sidebars page-no
 					for img in ima.find_all("img"):
 						img["src"] = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/4/005/08e/305/09e69c2.jpg"
 
-for tag in soup.find_all():
-	for string in tag.prettify().split():
-		if "student" in string and "href" not in string:
-			print (tag.prettify())
+for img in soup.find_all("img"):
+	if "https:" not in img['src']:
+		img["src"] = 'media/logo.png'
+
+pret = soup.prettify()
+pret = pret.replace("student", "AMAZING student")
+
 
 
 
 
 
 htm = open("proj3.html", 'w')
-htm.write(htmlcode)
+htm.write(pret)
 htm.close()
 
 
