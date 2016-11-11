@@ -10,13 +10,12 @@
 
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
+import sys
 import requests
 from bs4 import BeautifulSoup
 import re
-#import localcop.png as logo
+import HW3-StudentCopy.media.logo.png
 
-
-#logo = Image.open("logo.png")
 
 
 
@@ -35,15 +34,14 @@ for tag in soup.find_all(class_ = "html not-front logged-in two-sidebars page-no
 for tag in soup.find_all():
 	for string in tag.prettify().split():
 		if "student" in string and "href" not in string:
-			None
+			print (tag.prettify())
 
 
 
 
 
-htm = soup.prettify("utf-8")
-with open("proj3.html", "wb") as file:
-    file.write(htm)
-
+htm = open("proj3.html", 'w')
+htm.write(htmlcode)
+htm.close()
 
 
