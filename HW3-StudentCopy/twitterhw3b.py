@@ -22,21 +22,19 @@ api = tweepy.API(auth)
 
 public_tweets = api.search('UMSI')
 subjtot = 0
-subjcount = 0
 polartot = 0
-polarcount = 0
+count = 0
 
 
 for tweet in public_tweets:
 	print(tweet.text)
 	analysis = TextBlob(tweet.text)
-	print("Subjectivity", analysis.sentiment.subjectivity)
-	print("Polarity", analysis.sentiment.polarity)
+	#print("Subjectivity", analysis.sentiment.subjectivity)
+	#print("Polarity", analysis.sentiment.polarity)
 	subjtot += analysis.sentiment.subjectivity
 	polartot += analysis.sentiment.polarity
-	subjcount += 1
-	polarcount += 1
+	count += 1
 
 	
-print("Average subjectivity is", (subjtot/subjcount))
-print("Average polarity is", (polartot/polarcount))
+print("Average subjectivity is", (subjtot/count))
+print("Average polarity is", (polartot/count))

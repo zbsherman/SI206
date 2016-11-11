@@ -13,7 +13,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import localcop.png as logo
+#import localcop.png as logo
 
 
 #logo = Image.open("logo.png")
@@ -31,7 +31,6 @@ for tag in soup.find_all(class_ = "html not-front logged-in two-sidebars page-no
 				for ima in x(class_ = "field-item even"):
 					for img in ima.find_all("img"):
 						img["src"] = "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/4/005/08e/305/09e69c2.jpg"
-
 
 for tag in soup.find_all():
 	for string in tag.prettify().split():
