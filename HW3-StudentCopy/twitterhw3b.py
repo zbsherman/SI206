@@ -25,12 +25,10 @@ subjtot = 0
 polartot = 0
 count = 0
 
-
+print("Printing Tweets\n")
 for tweet in public_tweets:
 	print(tweet.text)
 	analysis = TextBlob(tweet.text)
-	#print("Subjectivity", analysis.sentiment.subjectivity)
-	#print("Polarity", analysis.sentiment.polarity)
 	subjtot += analysis.sentiment.subjectivity
 	polartot += analysis.sentiment.polarity
 	count += 1

@@ -6,9 +6,7 @@ from nltk import word_tokenize,sent_tokenize
 import random
 
 
-#print(rd)
-#tokens = nltk.word_tokenize(text2)
-#print(tokens)
+
 # Requirements:
 # 1) Only use the first 150 tokens
 # 2) Pick 5 parts of speech to prompt for, including nouns
@@ -44,8 +42,8 @@ for (word, tag) in tagged_tokens:
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
 
-print("\nOriginal")
+print("\nOriginal:")
 print("".join(old_words))
-print("\nNew")
+print("\nNew:")
 print ("".join(final_words))
 print("\n\nEND*******")
