@@ -14,7 +14,6 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import re
-#import HW3-StudentCopy.media.logo.png
 
 
 
@@ -37,8 +36,6 @@ for img in soup.find_all("img"):
 
 pret = soup.prettify()
 pret = pret.replace("student", "AMAZING student")
-
-
 
 
 
